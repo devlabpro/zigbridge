@@ -1,0 +1,11 @@
+name: "zigbridge"
+description: "Addon для создания виртуальных Zigbee устройств для возможности взаимодействия с HA через другие zigbee шлюзы"
+version: "1.0.0"
+slug: "zigbridge"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
