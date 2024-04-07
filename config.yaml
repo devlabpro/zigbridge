@@ -11,8 +11,7 @@ arch:
   - armv7
   - i386
 startup: services
-panel_icon: mdi:zigbee,
-image: zigbee2mqtt/zigbee2mqtt-{arch}
+panel_icon: mdi:zigbee
 ingress: true
 timeout: 30
 map:
