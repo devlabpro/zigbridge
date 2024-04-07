@@ -1,7 +1,8 @@
 name: "zigbridge"
 description: "Addon для создания виртуальных Zigbee устройств для возможности взаимодействия с HA через другие zigbee шлюзы"
-version: "1.0.0"
+version: dev
 slug: "zigbridge"
+uart: true
 init: false
 arch:
   - aarch64
@@ -9,3 +10,13 @@ arch:
   - armhf
   - armv7
   - i386
+startup: services
+panel_icon: mdi:zigbee,
+image: zigbee2mqtt/zigbee2mqtt-{arch}
+ingress: true
+timeout: 30
+map:
+  - addon_config:rw
+ports:
+  8099/tcp: null
+homeassistant_api: true
