@@ -182,6 +182,7 @@ def background_worker():
                 try:
                     connect_uart()
                     print("Подключение восстановлено!")
+                    ser.write("rst \r".encode('utf-8'))
                     break
                 except:
                     time.sleep(0.5)
