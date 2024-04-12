@@ -1,3 +1,4 @@
 .idea
 .vscode
 data/__pychache__
+data/test.py

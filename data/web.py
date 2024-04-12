@@ -56,7 +56,7 @@ def emit_device_state(device_id, state):
     data = {
         "id": get_request_id(),
         "type": "call_service",
-        "domain": "light",
+        "domain": device_id.split(".")[0],
         "service": state,
         "target": {
             "entity_id": device_id
