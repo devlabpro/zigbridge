@@ -107,15 +107,18 @@ def get_devices_ha():
     devices_response = ws.recv()
     devices = json.loads(devices_response)
     devices_list = {}
-    for i in devices['result']:
-        # Пример: добавление идентификатора и имени устройства в список
-        try:
-            devices_list[i['entity_id']] = "{} [{}]".format(i['attributes']['friendly_name'], i['entity_id'])
-        except:
-            devices_list[i['entity_id']] = "{} [{}]".format(i['entity_id'], i['entity_id'])
-    devices = devices_list
-    ha_device.set_options(devices_list)
-    ha_device.update()
+    try:
+        for i in devices['result']:
+            # Пример: добавление идентификатора и имени устройства в список
+            try:
+                devices_list[i['entity_id']] = "{} [{}]".format(i['attributes']['friendly_name'], i['entity_id'])
+            except:
+                devices_list[i['entity_id']] = "{} [{}]".format(i['entity_id'], i['entity_id'])
+        devices = devices_list
+        ha_device.set_options(devices_list)
+        ha_device.update()
+    except:
+        print(f"Ошибка при получении списка устройств: HA вернул ответ\n{devices}")
 
 def getChannels():
     print(rows)
