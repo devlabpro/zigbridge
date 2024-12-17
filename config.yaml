@@ -1,6 +1,6 @@
 name: "zigbridge"
 description: "Addon для создания виртуальных Zigbee устройств для возможности взаимодействия с HA через другие zigbee шлюзы"
-version: 0.0.3
+version: 0.0.4
 slug: "zigbridge"
 uart: true
 init: false
@@ -12,10 +12,19 @@ arch:
   - i386
 startup: services
 panel_icon: mdi:zigbee
+panel_title: Zigbee bridge
 ingress: true
 timeout: 30
 map:
   - addon_config:rw
+options:
+  app_log_level: info
+  disable_log_colors: false
+  esp_device_port: ""
+schema:
+  app_log_level: list(silly|debug|info|warn|error)
+  disable_log_colors: bool
+  esp_device_port: "str?"
 ports:
   8099/tcp: null
 homeassistant_api: true
