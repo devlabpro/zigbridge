@@ -1,6 +1,6 @@
 name: "zigbridge"
 description: "Addon для создания виртуальных Zigbee устройств для возможности взаимодействия с HA через другие zigbee шлюзы"
-version: 0.0.4
+version: 0.0.5
 slug: "zigbridge"
 uart: true
 init: false
@@ -19,9 +19,9 @@ map:
   - addon_config:rw
   - share
 options:
-  ESP_DEVICE_PORT: ""
+  ZB_ESP_DEVICE_PORT: ""
 schema:
-  ESP_DEVICE_PORT: "str?"
+  ZB_ESP_DEVICE_PORT: "str?"
 ports:
   8099/tcp: null
 homeassistant_api: true
