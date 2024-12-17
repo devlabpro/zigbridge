@@ -19,13 +19,9 @@ map:
   - addon_config:rw
   - share
 options:
-  app_log_level: info
-  disable_log_colors: false
-  esp_device_port: ""
+  ESP_DEVICE_PORT: ""
 schema:
-  app_log_level: list(silly|debug|info|warn|error)
-  disable_log_colors: bool
-  esp_device_port: "str?"
+  ESP_DEVICE_PORT: "str?"
 ports:
   8099/tcp: null
 homeassistant_api: true
