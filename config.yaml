@@ -1,6 +1,6 @@
 name: "zigbridge"
 description: "Addon для создания виртуальных Zigbee устройств для возможности взаимодействия с HA через другие zigbee шлюзы"
-version: 0.0.5
+version: 0.0.6
 slug: "zigbridge"
 uart: true
 init: false
