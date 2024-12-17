@@ -186,7 +186,7 @@ def background_worker():
                     time.sleep(0.5)
             continue
         s1 = b.decode('utf-8').rstrip()  # convert to string
-        #print("ESP -> ",s1)
+        print("ESP -> ",s1)
         if "coexist: coexist rom version" in s1:
             print("Found ESP32 init.")
             device_init = False
