@@ -17,6 +17,7 @@ ingress: true
 timeout: 30
 map:
   - addon_config:rw
+  - share
 options:
   app_log_level: info
   disable_log_colors: false
