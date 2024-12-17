@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from nicegui import ui, app, run
+import sys
 import time
 import db
 import serial
@@ -9,6 +10,11 @@ import requests
 import websocket
 import asyncio
 import os
+
+def debug(*args):
+    print(*args, file=sys.stderr)
+
+zb_esp_device_port = sys.argv[1]
 
 db.init()
 
@@ -33,16 +39,8 @@ ws.connect("ws://supervisor/core/websocket")
 
 def connect_uart():
     global ser
-    ports = serial.tools.list_ports.comports()
-    for port, desc, hwid in sorted(ports):
-        print("{} {} [{}]".format(port, desc, hwid))
-    ser_port = None
-    for port, desc, hwid in sorted(ports):
-        if "JTAG" in desc:
-            ser_port = port
-            break
-    print("Device found at: ", ser_port)
-    ser = serial.Serial(ser_port, 115200)
+    print("Try connect to device on: ", zb_esp_device_port)
+    ser = serial.Serial(zb_esp_device_port, 115200)
     print("Device init complete")
 
 
